@@ -1,0 +1,167 @@
+/* ========== VARIABLES ========== */
+
+:root {
+    --header-gradient: linear-gradient(to bottom, #0C4E5D, #0C687D);
+    --main-color: #0C687D;
+    --main-gradient: linear-gradient(to bottom, #FFFFFF, #DDDDDD);
+
+}
+
+/* ========== ROOT ========== */
+
+#root {
+    min-height: 100vh;
+}
+
+/* ========== HOME PAGE ========== */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== HEADER ========== */
+
+header {
+    background-image: var(--header-gradient);
+    min-height: 200px;
+    color: white;
+    padding: 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+#header-container {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-container a img {
+    transition: 0.3s;
+}
+
+#header-container a img:hover {
+    transform: scale(1.1);
+}
+
+#title-and-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+#title-and-icon h1 {
+    font-size: 4rem;
+}
+
+#title-and-icon img {
+    width: 56px;
+    transition: 0.3s;
+}
+
+#title-and-icon img:hover {
+    transform: scale(1.1);
+}
+
+.search {
+    width: min(60%, 700px);
+    min-height: 48px;
+    outline: none;
+    border-style: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+}
+
+/* ========== MAIN ========== */
+
+main {
+    background-image: var(--main-gradient);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-list {
+    background-color: var(--main-color);
+    width: min(80%, 1000px);
+    height: auto;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 120px auto;
+
+}
+
+.task {
+    width: 95%;
+    min-height: 72px;
+    border-radius: 12px;
+    background-color: #DDDDDD;
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+#task-list button {
+    min-height: 56px;
+    min-width: 180px;
+    outline: none;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    transition: 0.3s;
+}
+
+.add-task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 95%;
+}
+
+#input-task {
+    min-height: 48px;
+    min-width: 100%;
+    border-radius: 12px;
+    outline: none;
+    border-style: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+    background-image: var(--header-gradient);
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}

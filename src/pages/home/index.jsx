@@ -1,7 +1,8 @@
 import React from "react";
-import "./style.css"
-import GitHubIcon from "../../assets/github.svg"
-import Profile from "../../assets/profile.svg"
+import "./style.css";
+import GitHubIcon from "../../assets/github.svg";
+import Profile from "../../assets/profile.svg";
+import Task from "../../components/ui/task";
 
 export default function Home() {
     return (
@@ -23,28 +24,20 @@ export default function Home() {
                     </a>
                 </div>
 
-                <input className="search" type="text" placeholder="Pesquisar"/>
+                <input className="search" type="text" placeholder="Pesquisar" />
             </header>
 
             <main>
                 <div id="task-list">
                     <form className="add-task" action="#">
-                       { /*<input id="input-task" type="text" placeholder="Adicionar tarefa"/> */ }
+                        { /*<input id="input-task" type="text" placeholder="Adicionar tarefa"/> */}
                         <button>Adicionar tarefa</button>
                     </form>
-                    
 
-                    <div className="task">
-                        <p>task</p>
-                    </div>
+                    {tasks.map((task) => (
+                        <Task key={task.id} task={task} />
+                    ))}
 
-                    <div className="task">
-                        <p>task</p>
-                    </div>
-
-                    <div className="task">
-                        <p>task</p>
-                    </div>
                 </div>
             </main>
 
@@ -54,3 +47,27 @@ export default function Home() {
         </div>
     );
 }
+
+const tasks = [
+    {
+        id: 1,
+        title: "Fazer num sei o quê",
+        description: "1 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
+        created_at: "xx-xx-xxxx",
+        updated_at: "xx-xx-xxxx",
+    },
+    {
+        id: 2,
+        title: "Fazer sei la o quê la",
+        description: "2 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
+        created_at: "xx-xx-xxxx",
+        updated_at: "xx-xx-xxxx",
+    },
+    {
+        id: 3,
+        title: "Lavar louça",
+        description: "3 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
+        created_at: "xx-xx-xxxx",
+        updated_at: "xx-xx-xxxx",
+    },
+]

@@ -1,0 +1,45 @@
+header {
+    background-image: var(--header-gradient);
+    min-height: 200px;
+    color: white;
+    padding: 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+#header-container {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-container a img {
+    transition: 0.3s;
+}
+
+#header-container a img:hover {
+    transform: scale(1.1);
+}
+
+#title-and-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+#title-and-icon h1 {
+    font-size: 4rem;
+}
+
+#title-and-icon img {
+    width: 56px;
+    transition: 0.3s;
+}
+
+#title-and-icon img:hover {
+    transform: scale(1.1);
+}

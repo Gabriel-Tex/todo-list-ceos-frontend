@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 /* ========== VARIABLES ========== */
 
 :root{
-    --main-font: 'Outfit', sans-serif;
+    --main-font: 'Poppins', sans-serif;
     --header-gradient: linear-gradient(to bottom, #0C4E5D, #0C687D);
     --main-color: #0C687D;
     --main-gradient: linear-gradient(to bottom, #FFFFFF, #DDDDDD);

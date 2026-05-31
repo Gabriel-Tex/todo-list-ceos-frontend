@@ -1,11 +1,66 @@
-import React from "react";
+import { useState } from "react"
+import { loginRequest } from "../../services/api"
 import "./style.css"
 
-export default function Login() {
-    return (
+function Login() {
 
-        <div>
-            <h1>login</h1>
+    const [username, setUsername] = useState("")
+    const [senha, setSenha] = useState("")
+
+    async function fazerLogin(e) {
+        e.preventDefault()
+
+        try {
+
+            const data = await loginRequest(username, senha)
+
+            console.log(data)// Pra debbug aq, tira dps
+
+            localStorage.setItem(
+                "token",
+                data.access_token
+            )
+
+            alert("Login realizado!")
+
+        } catch (error) {
+            console.log(error)
+            alert("Erro no login")
+        }
+    }
+
+    return (
+        <div className="login-page">
+            
+            <section>
+                <h1>Todo List</h1>
+                <form onSubmit={fazerLogin}>
+
+                    <h2>Login</h2>
+
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    /><br></br>
+
+                    <input
+                        type="password"
+                        placeholder="Senha"
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                    /><br></br>
+
+                    <button type="submit" id='btn_enviar'>
+                        Entrar
+                    </button>
+                    <a href="#" id="link_conta">Não tem conta?Clique aqui</a>
+                </form>
+            </section>
+
         </div>
-    );
+    )
 }
+
+export default Login

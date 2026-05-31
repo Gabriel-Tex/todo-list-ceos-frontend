@@ -7,7 +7,7 @@ import Task from "../../components/ui/task";
 export default function Home() {
     return (
 
-        <div className="page">
+        <div className="homepage">
 
             <header>
                 <div id="header-container">

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { loginRequest } from "../../services/api"
-import "./Login.css"
+import "./style.css"
 
 function Login() {
 
@@ -30,7 +30,7 @@ function Login() {
     }
 
     return (
-        <main>
+        <div className="login-page">
             
             <section>
                 <h1>Todo List</h1>
@@ -59,7 +59,7 @@ function Login() {
                 </form>
             </section>
 
-        </main>
+        </div>
     )
 }
 

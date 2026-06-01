@@ -1,24 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+/* ========== VARIABLES ========== */
 
 :root{
-    --main-font: 'Outfit', sans-serif;
+    --main-font: 'Poppins', sans-serif;
+    --header-gradient: linear-gradient(to bottom, #0C4E5D, #0C687D);
+    --main-color: #0C687D;
+    --main-gradient: linear-gradient(to bottom, #FFFFFF, #DDDDDD);
+    --btn-gradient: linear-gradient(to bottom, #FFFFFF, #D7D7D7);
 }
+
+/* ========== GENERAL ========== */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--main-font);
 }
 
 html,
 body,
 #root{
-  width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 body{
   background-color: #dfdede;
+  font-family: var(--main-font);
 }

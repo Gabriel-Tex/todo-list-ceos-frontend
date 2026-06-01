@@ -1,0 +1,18 @@
+/* ========== HOME PAGE ========== */
+
+.homepage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========== MAIN ========== */
+
+.homepage main {
+    background-image: var(--main-gradient);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 

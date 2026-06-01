@@ -1,7 +1,11 @@
 import { useState } from "react"
 import "./style.css"
 import Input from "../../ui/Input"
+<<<<<<< HEAD
 import { loginRequest } from "../../../services/login"
+=======
+import { loginRequest } from "../../../services/api"
+>>>>>>> d4e4f6d2917c1a8bf385c2b874d730f1c21f7332
 import Button from "../../ui/Button";
 
 
@@ -17,6 +21,11 @@ export default function LoginForm() {
 
             const data = await loginRequest(username, senha)
 
+<<<<<<< HEAD
+=======
+            console.log(data)// Pra debbug aq, tira dps
+
+>>>>>>> d4e4f6d2917c1a8bf385c2b874d730f1c21f7332
             localStorage.setItem(
                 "token",
                 data.access_token

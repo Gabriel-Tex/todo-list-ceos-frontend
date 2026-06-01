@@ -5,7 +5,9 @@ export default function Input({
     type = "text",
     placeholder,
     value,
-    onChange
+    onChange,
+    className="",
+    ...props
 }) {
     return (
         <input
@@ -13,6 +15,8 @@ export default function Input({
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            className={`input ${className}`}
+            {...props}
         />
     )
 }

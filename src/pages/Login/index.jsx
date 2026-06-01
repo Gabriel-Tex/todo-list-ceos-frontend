@@ -1,4 +1,4 @@
-import LoginForm from "../../components/forms/loginForm"
+import LoginForm from "../../components/auth/LoginForm"
 import "./style.css"
 
 export default function Login() {

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import "./style.css"
-import Input from "../../ui/input"
+import Input from "../../ui/Input"
 import { loginRequest } from "../../../services/api"
-import Button from "../../ui/button";
+import Button from "../../ui/Button";
 
 
 export default function LoginForm() {

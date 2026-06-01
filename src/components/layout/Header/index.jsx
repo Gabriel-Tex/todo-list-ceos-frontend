@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.css";
 import GitHubIcon from "../../../assets/github.svg";
-import Profile from "../../../assets/profile.svg";
-import InputSearch from "../../../components/forms/inputSearch"
+import InputSearch from "../../forms/Search"
+import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({
+    icon,
+    redirectTo,
+    showSearch
+}) {
     return (
 
         <header>
@@ -17,12 +21,12 @@ export default function Header() {
                     <h1>TODO List</h1>
                 </div>
 
-                <a href="#">
-                    <img src={Profile} alt="profile icon" />
-                </a>
+                <Link to={redirectTo}>
+                    <img src={icon} alt="navigation icon" />
+                </Link>
             </div>
 
-            <InputSearch />
+            {showSearch && <InputSearch />}
         </header>
 
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
-import Task from "../../ui/task";
-import Button from "../../ui/button";
+import Task from "../../task/Task";
+import Button from "../../ui/Button";
 
 
 export default function TaskList() {
@@ -13,6 +13,7 @@ export default function TaskList() {
                 <Button
                     type="submit"
                     children="Adicionar tarefa"
+                    className="btn-add-task"
                 />
                 
             </form>

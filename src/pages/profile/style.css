@@ -1,0 +1,19 @@
+/* ========== PROFILE PAGE ========== */
+
+.profile-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========== MAIN ========== */
+
+.profile-page main {
+    background-image: var(--main-gradient);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 88px;
+} 

@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
-import Home from "./pages/home";
-import Login from "./pages/login";
-import Cadastro from "./pages/cadastro";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import Profile from "./pages/profile";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   )

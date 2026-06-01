@@ -19,7 +19,6 @@ function Cadastro() {
                 senha
             )
 
-            console.log(data) // debug
 
             alert("Usuário cadastrado com sucesso!")
 

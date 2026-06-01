@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
-import Arrow from "../../../assets/arrow.svg";
-import Checkbox from "../../ui/checkbox";
+import Checkbox from "../../ui/Checkbox";
 
 
 export default function Task({ task }) {
@@ -13,13 +12,10 @@ export default function Task({ task }) {
 
                     <h1>{task.title}</h1>
 
-
                 </div>
 
                 <Checkbox />
             </div>
-
-
 
             <div className="content">
                 <p>{task.description}</p>

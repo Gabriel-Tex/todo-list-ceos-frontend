@@ -1,0 +1,15 @@
+button {
+    outline: none;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 1000;
+    font-size: 1.8rem;
+    padding: 24px 48px;
+    transition: 0.3s;
+    background-image: var(--btn-gradient);
+}
+
+button:hover {
+    transform: scale(1.1);
+}

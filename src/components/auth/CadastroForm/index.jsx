@@ -1,44 +1,45 @@
 import { useState } from "react"
 import "../style.css"
 import Input from "../../ui/Input"
-import { loginRequest } from "../../../services/login"
+import { cadastroRequest } from "../../../services/cadastro"
 import Button from "../../ui/Button";
 
 
-export default function LoginForm() {
+export default function CadastroForm() {
 
     const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
-    async function fazerLogin(e) {
+    async function fazerCadastro(e) {
         e.preventDefault()
 
         try {
 
-            const data = await loginRequest(username, senha)
-
-            localStorage.setItem(
-                "token",
-                data.access_token
+            const data = await cadastroRequest(
+                username,
+                email,
+                senha
             )
 
-            alert("Login realizado!")
+
+            alert("Usuário cadastrado com sucesso!")
 
         } catch (error) {
             console.log(error)
-            alert("Erro no login")
+            alert("Erro ao cadastrar usuário")
         }
     }
 
     return (
         <form
             className="login-form"
-            onSubmit={fazerLogin}
+            onSubmit={fazerCadastro}
         >
             <div className="input-container">
 
                 <h2 id="login-title">
-                    Login
+                    Cadastro
                 </h2>
 
                 <Input
@@ -46,6 +47,14 @@ export default function LoginForm() {
                     value={username}
                     onChange={(e) =>
                         setUsername(e.target.value)
+                    }
+                />
+                <Input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) =>
+                        setEmail(e.target.value)
                     }
                 />
 

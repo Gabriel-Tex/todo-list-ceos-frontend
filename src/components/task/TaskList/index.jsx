@@ -2,21 +2,20 @@ import React from "react";
 import "./style.css";
 import Task from "../../task/Task";
 import Button from "../../ui/Button";
+import TaskForm from "../AddTaskForm";
 
 
 export default function TaskList() {
     return (
 
         <div id="task-list">
-            <form className="add-task" action="#">
-                { /*<input id="input-task" type="text" placeholder="Adicionar tarefa"/> */}
-                <Button
-                    type="submit"
-                    children="Adicionar tarefa"
-                    className="btn-add-task"
-                />
-                
-            </form>
+
+            <TaskForm />
+
+            <div id="title-container">
+                <h2 id="title-task-list"> Minhas Tarefas </h2>
+            </div>
+
 
             {tasks.map((task) => (
                 <Task key={task.id} task={task} />

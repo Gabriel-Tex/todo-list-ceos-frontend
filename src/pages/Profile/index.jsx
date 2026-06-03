@@ -8,9 +8,9 @@ import Button from "../../components/ui/Button";
 import { logout } from "../../services/logout";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Profile() {
 
+    // logout
     const navigate = useNavigate();
 
     async function handleLogout() {

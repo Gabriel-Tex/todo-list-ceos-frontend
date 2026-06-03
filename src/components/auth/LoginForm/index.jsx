@@ -3,12 +3,16 @@ import "../style.css"
 import Input from "../../ui/Input"
 import { loginRequest } from "../../../services/login"
 import Button from "../../ui/Button";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 export default function LoginForm() {
 
     const [username, setUsername] = useState("")
     const [senha, setSenha] = useState("")
+
+    const navigate = useNavigate();
 
     async function fazerLogin(e) {
         e.preventDefault()
@@ -17,12 +21,19 @@ export default function LoginForm() {
 
             const data = await loginRequest(username, senha)
 
+            console.log(data);
+
             localStorage.setItem(
                 "token",
-                data.access_token
+                data.access
             )
 
-            alert("Login realizado!")
+            localStorage.setItem(
+                "refresh",
+                data.refresh
+            );
+
+            navigate("/");
 
         } catch (error) {
             console.log(error)
@@ -60,14 +71,14 @@ export default function LoginForm() {
 
             </div>
 
-            <Button 
-                type="submit"   
+            <Button
+                type="submit"
                 children="Entrar"
             />
 
-            <a id="link-account" href="#">
+            <Link to={"/cadastro"} id="link-account">
                 <p>Não tem conta? Clique aqui.</p>
-            </a>
+            </Link>
 
         </form>
     )

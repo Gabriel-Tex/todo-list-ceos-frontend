@@ -3,6 +3,7 @@ import "../style.css"
 import Input from "../../ui/Input"
 import { cadastroRequest } from "../../../services/cadastro"
 import Button from "../../ui/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function CadastroForm() {
@@ -10,6 +11,8 @@ export default function CadastroForm() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
+
+    const navigate = useNavigate();
 
     async function fazerCadastro(e) {
         e.preventDefault()
@@ -22,8 +25,7 @@ export default function CadastroForm() {
                 senha
             )
 
-
-            alert("Usuário cadastrado com sucesso!")
+            navigate("/login");
 
         } catch (error) {
             console.log(error)
@@ -69,14 +71,14 @@ export default function CadastroForm() {
 
             </div>
 
-            <Button 
-                type="submit"   
+            <Button
+                type="submit"
                 children="Entrar"
             />
 
-            <a id="link-account" href="#">
-                <p>Não tem conta? Clique aqui.</p>
-            </a>
+            <Link to={"/login"} id="link-account">
+                <p>Já tem conta? Clique aqui.</p>
+            </Link>
 
         </form>
     )

@@ -15,5 +15,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 88px;
+    gap: 56px;
 } 
+
+.logout-button{
+    background-image: none;
+    background-color: #CECECE;
+    box-shadow: 0px 16px 20px rgba(0,0,0,0.5);
+}

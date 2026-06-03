@@ -1,6 +1,6 @@
 .card{
     display: flex;
-    background-color: #CECECE;
+    background-color: var(--profile-card);
     min-width: 100%;
     border-radius: 16px;
     padding: 32px 56px;

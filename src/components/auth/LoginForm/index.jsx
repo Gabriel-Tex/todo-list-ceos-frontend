@@ -21,7 +21,6 @@ export default function LoginForm() {
 
             const data = await loginRequest(username, senha)
 
-            console.log(data);
 
             localStorage.setItem(
                 "token",

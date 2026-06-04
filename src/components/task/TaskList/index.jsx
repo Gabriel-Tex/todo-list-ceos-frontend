@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Task from "../../task/Task";
 import Button from "../../ui/Button";
 import TaskForm from "../AddTaskForm";
-
+import { getTasks } from "../../../services/task";
 
 export default function TaskList() {
+    
+    const [tasks, setTasks] = useState([]);
+    useEffect(() => {
+        async function fetchMyData() {
+            try {
+                const data = await getTasks(); 
+                
+                if (Array.isArray(data)) {
+                    setTasks(data); 
+                } else {
+                    setTasks([]); 
+                }
+            } catch (error) {
+                console.error("Erro ao buscar tarefas:", error);
+                setTasks([]); 
+            }
+        }
+
+        fetchMyData();
+    }, []); 
+
     return (
-
         <div id="task-list">
-
             <TaskForm />
 
             <div id="title-container">
@@ -20,32 +39,6 @@ export default function TaskList() {
             {tasks.map((task) => (
                 <Task key={task.id} task={task} />
             ))}
-
         </div>
-
     );
 }
-
-const tasks = [
-    {
-        id: 1,
-        title: "Fazer num sei o quê",
-        description: "1 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
-        created_at: "xx-xx-xxxx",
-        updated_at: "xx-xx-xxxx",
-    },
-    {
-        id: 2,
-        title: "Fazer sei la o quê la",
-        description: "2 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
-        created_at: "xx-xx-xxxx",
-        updated_at: "xx-xx-xxxx",
-    },
-    {
-        id: 3,
-        title: "Lavar louça",
-        description: "3 -Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim autem, officiis itaque quis possimus, labore quia ipsa beatae natus adipisci tempore, molestiae velit magni sunt veritatis modi. Illo, ipsam nihil?",
-        created_at: "xx-xx-xxxx",
-        updated_at: "xx-xx-xxxx",
-    },
-]

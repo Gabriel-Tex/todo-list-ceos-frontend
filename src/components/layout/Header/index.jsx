@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 export default function Header({
     icon,
     redirectTo,
-    showSearch
+    showSearch,
+    searchValue,
+    onSearchChange
 }) {
     return (
 
@@ -26,7 +28,10 @@ export default function Header({
                 </Link>
             </div>
 
-            {showSearch && <InputSearch />}
+            {showSearch && <InputSearch
+                value={searchValue}
+                onChange={onSearchChange}
+            />}
         </header>
 
     );

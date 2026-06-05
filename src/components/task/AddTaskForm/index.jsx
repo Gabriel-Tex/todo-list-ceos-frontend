@@ -5,18 +5,20 @@ import Input from "../../ui/Input";
 import  {createTask}  from "../../../services/task";
 
 
-export default function TaskForm() {
+export default function TaskForm({ onTaskAdded }) {
     const [title, setTitle] = useState("")
-    const [priority, setPriority] = useState("low")
+    const [description, setDescription] = useState("");
+    const [priority, setPriority] = useState("medium")
     const [finalDate, setFinalDate] = useState("")
 
     async function dispararEnvio(e) {
         e.preventDefault();
 
         const novoObjetoTask = {
-            title: title,          
-            priority: priority,
-            final_date: finalDate   
+            title,
+            description,          
+            priority,
+            final_date: finalDate || null  
         };
 
         try {
@@ -25,7 +27,11 @@ export default function TaskForm() {
             
             // Limpando os campos
             setTitle("");
+            setDescription("");
             setFinalDate("");
+            setPriority("medium");
+
+            if (onTaskAdded) onTaskAdded();
         } catch (error) {
             console.error("Erro ao cadastrar tarefa:", error);
             alert("Erro ao salvar tarefa no servidor.");
@@ -43,27 +49,30 @@ export default function TaskForm() {
                 onChange={(e) => setTitle(e.target.value)}
             />
             
-            <Input 
+            <Input
                 className="input-task"
-                placeholder="Prioridade (Baixa, Média, Alta)"
+                placeholder="Descrição (opcional)"
                 type="text"
-                list="prioridades" 
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+            />
+
+            <select
+                className="input-task select-priority"
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
-            />
+            >
+                <option value="low">Baixa</option>
+                <option value="medium">Média</option>
+                <option value="high">Alta</option>
+            </select>
 
             <Input 
                 className="input-task"
                 type="date"
                 value={finalDate}
                 onChange={(e) => setFinalDate(e.target.value)}
-            />
-
-            <datalist id="prioridades">
-                <option value="low" labe="Baixa"/>
-                <option value="medium" label="Média" />
-                <option value="high" label="Alta"/>
-            </datalist>
+            />  
             
             <Button
                 type="submit"

@@ -1,12 +1,20 @@
 import React from "react";
 import "./style.css";
 
-export default function Checkbox() {
+export default function Checkbox({ checked, onChange }) {
+
+    const uniqueId = `cbx-${Math.random().toString(36).slice(2, 9)}`;
+
     return (
 
         <div className="checkbox-wrapper-12">
             <div className="cbx">
-                <input id="cbx-12" type="checkbox" />
+                <input
+                    id={uniqueId}
+                    type="checkbox"
+                    checked={checked}
+                    onChange={onChange}
+                />
 
                 <label htmlFor="cbx-12"></label>
 

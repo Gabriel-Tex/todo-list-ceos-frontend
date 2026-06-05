@@ -25,7 +25,10 @@ export default function CadastroForm() {
                 senha
             )
 
-            navigate("/login");
+            localStorage.setItem("token", data.tokens.access);
+            localStorage.setItem("refresh", data.tokens.refresh);
+
+            navigate("/");
 
         } catch (error) {
             console.log(error)
